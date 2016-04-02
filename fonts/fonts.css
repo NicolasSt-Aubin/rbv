@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Honey Script';
+  src: url('HoneyScript-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Honey Script';
+    src: url('HoneyScript-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jenna Sue';
+    src: url('JennaSue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
