@@ -48,7 +48,7 @@
 
     <!-- Navigation -->
     <nav class="white">
-      <div class="home-button button" >
+      <div class="home-button" >
 				<img src="img/rbv_logo_blanc.png" alt="RBV - groupe de rap québécois"/>
 			</div>
     </nav>

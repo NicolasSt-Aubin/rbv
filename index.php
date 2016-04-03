@@ -1,20 +1,6 @@
 <?php include_once('header.php') ?>
 
-<div id="about-page" class="pt-page">
-  <div class="about-text text">
-    <?php echo $lang["about-desc"];?>
-    <br><br>
-    <?php echo $lang["about-num"];?>
-    <br>
-    <?php echo $lang["about-email"];?>
-    <br>
-    <?php echo $lang["about-address-1"];?>
-    <br>
-    <?php echo $lang["about-address-2"];?>
-  </div>
-</div>
-
-<div id="home-page" class="pt-page">
+<div id="home-page" class="pt-page pt-page-current">
   <div class="hover-bg" id="frog-bg"></div>
   <div class="hover-bg" id="faces-bg" ></div>
   <img class="cover-img" src="img/cover_blanc.png" />
@@ -24,7 +10,15 @@
   <div id="galery-button" class="menu-button">Galerie</div>
 </div>
 
-<div id="contact-page" class="pt-page">
+<div id="about-page" class="pt-page">
+  <div class="close-box button" >X</div>
+  <div class="about-text text">
+    Cette babouinerie festive et rassembleuse qu’est RBV, groupe hiphop francofunk québécois, plonge les racines de son arbre en constante croissance dans la musique du monde d’hier, déploie sa poésie de singe dans les moeurs d’aujourd’hui et agite sa culture sur les branches et les fleurs des rythmes de demain.
+«Un esprit sain dans un corps singe»
+  </div>
+</div>
+
+<div id="contact-page" class="pt-page ">
   <form>
     <div class="contact-text text">
       <div class="sk-folding-cube">
@@ -50,7 +44,7 @@
   </form>
 </div>
 
-<div class="pt-page pt-page-current" id="music-lightbox">
+<div class="pt-page" id="galery-lightbox">
   <div class="lightbox" >
     <div class="top-nav">
       <div class="close-box button" >X</div>

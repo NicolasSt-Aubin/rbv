@@ -10,12 +10,17 @@ html,body {
 
 .button {
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .button:hover {
-  text-decoration: underline;
+  text-decoration:line-through;
+}
+
+.close-box {
+  font-size: 40px;
+  position: absolute;
+  top: 40px;
+  right: 50px;
 }
 
 .white {
@@ -159,7 +164,6 @@ nav .lang-button {
 
 .lightbox {
   background-color: white;
-  font-size: 40px;
   width: 100%;
 	height: 100%;
 	position: absolute;
@@ -183,12 +187,6 @@ nav .lang-button {
   position: absolute;
   top: 40px;
   left: 50px;
-}
-
-.lightbox .top-nav .close-box {
-  position: absolute;
-  top: 40px;
-  right: 50px;
 }
 
 .lightbox .left-click {
@@ -246,15 +244,21 @@ nav .lang-button {
 /* ABOUT PAGE */
 
 #about-page {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: white;
+  color: black;
+  font-size: 60px;
+
+  overflow-y: scroll;
+}
+
+#about-page .close-box {
+  position: fixed;
+
 }
 
 .about-text {
-  max-width: 800px;
-  padding: 0px 15px;
-  max-height: 60%;
-  overflow-y: scroll;
+  padding: 100px 100px;
+  max-height: 100%;
 }
 
 /* CONTACT PAGE */
@@ -426,15 +430,20 @@ nav .lang-button {
 	left: 0;
   right: 0;
   bottom: 0;
-	visibility: hidden;
 	overflow: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
+  display: none;
 }
 
-.pt-page-current, .lb-page-current {
-	visibility: visible;
+.pt-page-current {
+  display: block;
+	z-index: 2;
+}
+
+.lb-page-current {
+	display: block;
 	z-index: 1;
 }
 

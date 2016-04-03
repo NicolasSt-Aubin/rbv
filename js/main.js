@@ -17,7 +17,7 @@ support = Modernizr.cssanimations;
 
 $(window).load(function(){
 
-  $("#music-button").hover(
+  $("#galery-button").hover(
     function() {
         $("#frog-bg").fadeIn("fast");
     },
@@ -34,8 +34,10 @@ $(window).load(function(){
     }
   );
   //$(".send-button").click(sendMail);
-  $("#music-button").click(showMusicLightbox);
-  $("#music-lightbox .close-box").click(hideMusicLightbox);
+  $("#about-button").click(showAbout);
+  $("#about-page .close-box").click(hideAbout);
+  $("#galery-button").click(showGaleryLightbox);
+  $("#galery-lightbox .close-box").click(hideGaleryLightbox);
 
   $(".right-click").click(function(){
     changeLightboxPage(1);
@@ -52,7 +54,7 @@ $(window).load(function(){
         changeLightboxPage(1);
         break;
         case 27: // escape
-        $("#lightbox").fadeOut("slow");
+        hideGaleryLightbox();
         break;
 
         default: return; // exit this handler for other keys
@@ -65,21 +67,50 @@ $(window).load(function(){
   $('#email-input').autoGrowInput({ minWidth: 80, maxWidth: 400, comfortZone: 20 });
 });
 
-function showMusicLightbox() {
+function showAbout() {
   if( isAnimating ) {
     return false;
   }
   isAnimating = true;
 
   var $currPage = $(".pt-page-current");
-  var $nextPage = $("#music-lightbox").addClass('pt-page-current');
+  var $nextPage = $("#about-page").addClass('pt-page-current');
+  var inClass = 'pt-page-moveFromLeft pt-page-ontop';
+  var outClass = 'pt-page-fade-out';
+
+  animatePages($currPage, $nextPage, inClass, outClass);
+}
+
+function hideAbout() {
+  console.log("huide");
+  if( isAnimating ) {
+    return false;
+  }
+  isAnimating = true;
+
+  var $currPage = $(".pt-page-current");
+  var $nextPage = $("#home-page").addClass('pt-page-current');
+  var inClass = 'pt-page-fade-in';
+  var outClass = 'pt-page-moveToLeft pt-page-ontop';
+
+  animatePages($currPage, $nextPage, inClass, outClass);
+}
+
+function showGaleryLightbox() {
+  if( isAnimating ) {
+    return false;
+  }
+  isAnimating = true;
+
+  var $currPage = $(".pt-page-current");
+  var $nextPage = $("#galery-lightbox").addClass('pt-page-current');
   var inClass = 'pt-page-moveFromBottom pt-page-ontop';
   var outClass = 'pt-page-fade-out';
 
   animatePages($currPage, $nextPage, inClass, outClass);
 }
 
-function hideMusicLightbox() {
+function hideGaleryLightbox() {
   if( isAnimating ) {
     return false;
   }
@@ -122,9 +153,10 @@ function onEndAnimation( $outpage, $inpage ) {
 ///// LIGHTBOX //////
 
 function changeLightboxPage(page) {
-  if( isAnimating || $(".lb-page").length <= 1 || !$("#lightbox").is(":visible") ) {
+  if( isAnimating || $(".lb-page").length <= 1 || !$("#galery-lightbox").is(":visible") ) {
     return false;
   }
+  console.log("coucou");
 
   $(".lb-page").each(function(){
     if ( $(this).hasClass("lb-page-current") ) {
@@ -143,8 +175,8 @@ function changeLightboxPage(page) {
           $nextPage = $(".lb-page").first().addClass('lb-page-current');
         }
       } else if (page < 0) {
-        outClass = 'pt-page-moveToRightFade';
-        inClass = 'pt-page-moveFromLeftFade';
+        outClass = 'pt-page-moveToRight';
+        inClass = 'pt-page-moveFromLeft';
         if ($(this).prev().hasClass("lb-page")) {
           $nextPage = $(this).prev().addClass('lb-page-current');
         } else {
