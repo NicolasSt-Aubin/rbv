@@ -33,9 +33,19 @@ $(window).load(function(){
         $("#faces-bg").fadeOut("fast");
     }
   );
+  $("#contact-button").hover(
+    function() {
+        $("#chars-bg").fadeIn("fast");
+    },
+    function() {
+        $("#chars-bg").fadeOut("fast");
+    }
+  );
   //$(".send-button").click(sendMail);
   $("#about-button").click(showAbout);
   $("#about-page .close-box").click(hideAbout);
+  $("#contact-button").click(showContact);
+  $("#contact-page .close-box").click(hideContact);
   $("#galery-button").click(showGaleryLightbox);
   $("#galery-lightbox .close-box").click(hideGaleryLightbox);
 
@@ -65,6 +75,7 @@ $(window).load(function(){
   $("#contact-textarea").autoGrow();
   $('#name-input').autoGrowInput({ minWidth: 80, maxWidth: 400, comfortZone: 20 });
   $('#email-input').autoGrowInput({ minWidth: 80, maxWidth: 400, comfortZone: 20 });
+
 });
 
 function showAbout() {
@@ -82,7 +93,6 @@ function showAbout() {
 }
 
 function hideAbout() {
-  console.log("huide");
   if( isAnimating ) {
     return false;
   }
@@ -92,6 +102,36 @@ function hideAbout() {
   var $nextPage = $("#home-page").addClass('pt-page-current');
   var inClass = 'pt-page-fade-in';
   var outClass = 'pt-page-moveToLeft pt-page-ontop';
+
+  animatePages($currPage, $nextPage, inClass, outClass);
+}
+
+function showContact() {
+  if( isAnimating ) {
+    return false;
+  }
+  isAnimating = true;
+
+  var $currPage = $(".pt-page-current");
+  var $nextPage = $("#contact-page").addClass('pt-page-current');
+  var inClass = 'pt-page-moveFromTop pt-page-ontop';
+  var outClass = 'pt-page-fade-out';
+
+  initContactForm();
+
+  animatePages($currPage, $nextPage, inClass, outClass);
+}
+
+function hideContact() {
+  if( isAnimating ) {
+    return false;
+  }
+  isAnimating = true;
+
+  var $currPage = $(".pt-page-current");
+  var $nextPage = $("#home-page").addClass('pt-page-current');
+  var inClass = 'pt-page-fade-in';
+  var outClass = 'pt-page-moveToTop pt-page-ontop';
 
   animatePages($currPage, $nextPage, inClass, outClass);
 }
@@ -225,7 +265,7 @@ function onEndLbAnimation( $outpage, $inpage ) {
 ///// CONTACT FORM /////
 
 function initContactForm() {
-  var stringToType = "Cher RBV, ";
+  var stringToType = "Cher Racailles de Basse Ville, ";
 
   $("#contact-textarea").focus();
   $("#contact-textarea").typed({

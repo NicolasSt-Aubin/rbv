@@ -110,11 +110,21 @@ nav .lang-button {
 
 #faces-bg {
   background: url(../img/faces.png) repeat center center fixed;
-  animation: rightLeft 10s linear infinite;
+  animation: rightLeft 12s linear infinite;
 }
 @keyframes rightLeft {
   0% { background-position: 0 0; }
   50% { background-position: 100% -100%; }
+  100% { background-position: 0 0; }
+}
+
+#chars-bg {
+  background: url(../img/chars.png) repeat center center fixed;
+  animation: leftRigh 8s linear infinite;
+}
+@keyframes leftRigh {
+  0% { background-position: 0 0; }
+  50% { background-position: -300% -100%; }
   100% { background-position: 0 0; }
 }
 
@@ -271,6 +281,8 @@ nav .lang-button {
 #contact-page form {
   width: 100%;
   height: 100%;
+  font-family: Honey Script;
+  font-size: 30px;
 }
 
 .contact-text {
@@ -324,7 +336,8 @@ nav .lang-button {
 
 .send-button img {
   width: 25px;
-  margin-left: 10px;
+  margin-top: -4px;
+  margin-left: 0px;
 }
 
 .sk-folding-cube {
@@ -434,16 +447,23 @@ nav .lang-button {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
+}
+
+.pt-page {
+  visibility: hidden;
+}
+
+.lb-page {
   display: none;
 }
 
 .pt-page-current {
-  display: block;
+  visibility: visible;
 	z-index: 2;
 }
 
 .lb-page-current {
-	display: block;
+	display: block;;
 	z-index: 1;
 }
 

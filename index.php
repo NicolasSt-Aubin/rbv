@@ -3,6 +3,7 @@
 <div id="home-page" class="pt-page pt-page-current">
   <div class="hover-bg" id="frog-bg"></div>
   <div class="hover-bg" id="faces-bg" ></div>
+  <div class="hover-bg" id="chars-bg" ></div>
   <img class="cover-img" src="img/cover_blanc.png" />
   <div id="about-button" class="menu-button">A propos</div>
   <div id="contact-button" class="menu-button">Contact</div>
@@ -13,12 +14,14 @@
 <div id="about-page" class="pt-page">
   <div class="close-box button" >X</div>
   <div class="about-text text">
-    Cette babouinerie festive et rassembleuse qu’est RBV, groupe hiphop francofunk québécois, plonge les racines de son arbre en constante croissance dans la musique du monde d’hier, déploie sa poésie de singe dans les moeurs d’aujourd’hui et agite sa culture sur les branches et les fleurs des rythmes de demain.
-«Un esprit sain dans un corps singe»
+    Cette babouinerie festive et rassembleuse qu’est RBV, groupe hiphop francofunk quebecois, plonge les racines de son arbre en constante croissance dans la musique du monde d’hier, deploie sa poesie de singe dans les moeurs d’aujourd’hui et agite sa culture sur les branches et les fleurs des rythmes de demain.
+    <hr>
+    «Un esprit sain dans un corps singe»
   </div>
 </div>
 
-<div id="contact-page" class="pt-page ">
+<div id="contact-page" class="pt-page">
+  <div class="close-box button" >X</div>
   <form>
     <div class="contact-text text">
       <div class="sk-folding-cube">
@@ -32,13 +35,13 @@
       <textarea name="message" id="contact-textarea"></textarea>
     </div>
     <div class="contact-details">
-      <?php echo $lang["sincerely"];?>
-      <input name="name" id="name-input" type="text" placeholder="<?php echo $lang["name"];?>"/>
-      <?php echo $lang["at"];?>
-      <input name="email" id="email-input" typse="text" placeholder="<?php echo $lang["address"];?>">
+      Sincèrement,
+      <input name="name" id="name-input" type="text" placeholder="votre nom"/>
+      ,
+      <input name="email" id="email-input" typse="text" placeholder="votre e-mail">
       <div class="send-button button">
         <?php echo $lang["send"];?>
-        <img src="img/right_arrow.svg">
+        <img src="img/right_arrow.png">
       </div>
     </div>
   </form>
